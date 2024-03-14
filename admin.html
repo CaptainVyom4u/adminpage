@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        .event {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .report-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .approve-btn, .reject-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        .approve-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .reject-btn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Page - Event Management</h1>
+    </header>
+
+    <div class="container">
+        <h2>List of Events</h2>
+        <div class="event">
+            <h3>Event 1</h3>
+            <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="approve-btn">Approve</button>
+            <button class="reject-btn">Reject</button>
+        </div>
+        <div class="event">
+            <h3>Event 2</h3>
+            <p>Description: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button class="approve-btn">Approve</button>
+            <button class="reject-btn">Reject</button>
+        </div>
+        <!-- Add more events here -->
+    </div>
+
+    <div class="footer">
+        <button class="report-btn">Generate Report</button>
+    </div>
+
+    <script>
+        // JavaScript for event approval and rejection
+        const approveButtons = document.querySelectorAll('.approve-btn');
+        const rejectButtons = document.querySelectorAll('.reject-btn');
+
+        approveButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const eventDiv = button.parentElement;
+                eventDiv.style.backgroundColor = '#d4edda'; // Change background color for approved event
+            });
+        });
+
+        rejectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const eventDiv = button.parentElement;
+                eventDiv.style.backgroundColor = '#f8d7da'; // Change background color for rejected event
+            });
+        });
+
+        // JavaScript for generating report
+        const reportButton = document.querySelector('.report-btn');
+        reportButton.addEventListener('click', () => {
+            // Logic for generating report (can be added here)
+            alert('Generating report...');
+        });
+    </script>
+</body>
+</html>
